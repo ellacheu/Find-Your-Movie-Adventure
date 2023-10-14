@@ -12,16 +12,16 @@
 <body>
 
     <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-md">
+    <nav class="navbar navbar-expand">
+        <div class="container">
         <a class="navbar-brand" href="./landingpage.html">Find Your Movie Adventure</a>
         <a class="navbar-brand" href="./watchlist.html">My Watchlist</a>
         </div>
     </nav>
 
     <!-- title/description card -->
-    <div class="container-md flex-row align-center justify-center">
-        <div class="col card text-center mb-3 p-3 align-center justify-center">
+    <div class="container-md flex-row align-center justify-center titleCard">
+        <div class="col card text-center mb-3 p-3 align-center justify-center descripCard">
           <h2 class="text">Welcome to Find Your Movie Adventure</h2>
           <p>Explore for new movies and shows to find what you want to watch next!  
             We can give you recommendations based off of your selected preferences and show you which streaming platforms
@@ -30,13 +30,13 @@
           </div>
 
           <!-- search bar -->
-          <div class="row mb-3 p-2">
+          <div class="row mb-3 p-2 searchBar">
           <form id="search-form">
             <input id="search-input" class="form w-100" type="text" placeholder="Search for movies and shows!">
           </div>
 
           <!-- dropdown type input -->
-          <div class="row">
+          <div class="row dropdownInput">
             <select class="col dropdown mb-2 p-2" id="type-input">
                 <option value="" disabled selected>Type</option>
                 <option value="search">Select All</option>
@@ -68,7 +68,7 @@
             </div>
 
             <!-- search button -->
-            <div class="row mb-3 p-2">
+            <div class="row mb-3 p-2 searchBtnLanding">
                 <button class="btn btn-info btn-block">Search</button>
                 </div>
             </div>
@@ -76,13 +76,13 @@
         </div>
 
             <!-- footer -->
-        <div class="fixed-bottom">
+        <div class="fixed-bottom footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-md-center">
+                <div class="column">
+                    <div class="col-md-6 text-md-center footerText">
                         <p>&copy; 2023 --insert credits--</p>
                     </div>
-                    <div class="col-md-6 text-md-right">
+                    <div class="col-md-6 text-md-right footerText">
                         <p>Contact Us | Privacy Policy | Terms of Service</p>
                     </div>
                 </div>

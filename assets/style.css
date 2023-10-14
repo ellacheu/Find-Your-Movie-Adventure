@@ -1,0 +1,97 @@
+/* GLOBAL */
+:root {
+    --blackColor: #30292F;
+    --grayColor: #403B40;
+    --whiteColor: #FFF8F0;
+    --orangeColor: #E27812;
+    --blueColor: #0D646B;
+}
+
+/* LANDING PAGE */
+
+body {
+    background-color: var(--blackColor);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    color: var(--whiteColor);
+}
+
+.titleCard {
+    background-color: var(--grayColor);
+    border-radius: 20px;
+    margin-top: 5%;
+}
+
+.descripCard {
+    background-color: transparent;
+    border: none;
+    color: var(--whiteColor);
+    margin: 0% 5%;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    margin: 0% 9%;
+}
+
+#search-input {
+    border-radius: 5px;
+    border-style: none;
+    padding: 1%;
+    background-color: var(--whiteColor);
+}
+
+.dropdownInput {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% 10%;
+}
+
+.dropdownInput select {
+    max-width: 30%;
+    border-style: none;
+    border-radius: 5px;
+    color: var(--blackColor);
+    background-color: var(--whiteColor);
+}
+
+.searchBtnLanding {
+    margin: 0% 45%;
+}
+
+.searchBtnLanding button {
+    background-color: var(--orangeColor);
+    border-style: none;
+    color: var(--whiteColor)
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* .footerText {
+    margin: 0% 40%;
+} */
+
+
+.footer p {
+    color: var(--whiteColor);
+    /* text-align: center; */
+    font-size: 15px;
+}
+
+
+
+
+
+
+
