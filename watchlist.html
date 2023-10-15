@@ -14,8 +14,73 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-md">
         <a class="navbar-brand" href="./landingpage.html">Find Your Movie Adventure</a>
+        <a class="navbar-brand" href="./watchlist.html">My Watchlist</a>
         </div>
     </nav>
+
+    <div class="row">
+        <div class="col-md-4">
+        <div class="card">
+            <h3>Search My Watch List</h3>
+            <div>
+                <form id="search-form">
+                  <input id="search-input" class="form w-100" type="text" placeholder="Search my watch list">
+
+            </div>
+            <div>
+                <p>Filter by:</p>
+                <select class="col dropdown mb-2 p-2" id="type-input">
+                    <option value="" disabled selected>Type</option>
+                    <option value="Movies">Movies</option>
+                    <option value="Shows">Shows</option>
+                </select>
+                <div class="row"></div>
+                <select class="col dropdown mb-2 p-2" id="genre-input">
+                    <option value="" disabled selected>Genre</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                    <option value="documentaries">Documentaries</option>
+                  </select>
+                  <div class="row">
+                  <select class="col dropdown mb-2 p-2" id="streaming-input">
+                    <option value="" disabled selected>Streaming Services</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="hulu">Hulu</option>
+                    <option value="hbomax">HBO Max</option>
+                    <option value="disney">Disney+</option>
+                    <option value="prime">Amazon Prime</option>
+                </select>
+            </div>
+        </div>
+            <div class="row mb-3 p-2">
+                <button class="btn filterBtn btn-info btn-sm">Filter</button>
+            </div>
+            <!-- list element for search results -->
+            <ul></ul>
+            </div>
+        </div>
+    
+        <div class="col-md-8">
+        <div class="card">
+            <h3>My Watch List</h3>
+            <div class="card">
+                <!-- Watch list example card -->
+                <h5>Movie title</h5>
+                <img>
+                <p class="summary">summary</p>
+                <p> streaming services:
+                
+                <div class="d-grid gap 2 d-md-block">
+                <button class="btn watchBtn btn-primary btn-sm btn-info">Watch</button>
+                <button class="btn removeBtn btn-danger btn-sm btn-info">Remove</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
 
 
     <!-- footer -->
