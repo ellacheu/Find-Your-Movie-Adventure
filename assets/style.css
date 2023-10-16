@@ -4,7 +4,7 @@
     --grayColor: #403B40;
     --whiteColor: #FFF8F0;
     --orangeColor: #E27812;
-    --blueColor: #0D646B;
+    --blueColor: #16ABB6;
 }
 
 /* LANDING PAGE */
@@ -89,9 +89,48 @@ body {
     font-size: 15px;
 }
 
+/* WATCHLIST PAGE */
 
+.watchlistMain {
+    margin-top: 5%;
+}
 
+.watchlistSearch {
+    margin-right: 30%;
+    background-color: var(--grayColor);
+}
 
+.watchlistSearch h3 {
+    color: var(--whiteColor);
+}
 
+.watchlistResults {
+    background-color: var(--grayColor);
+    padding: 1%;
+}
+
+.watchlistResults h3,
+.watchlistResults h5,
+.watchlistResults p {
+    color: var(--whiteColor);
+}
+
+.watchlistResults .card {
+    background-color: var(--blackColor);
+    border-style: none;
+    margin: 2%;
+    padding: 1.5%;
+}
+
+.watchBtn {
+    background-color: var(--blueColor);
+    border-style: none;
+    color: var(--whiteColor);
+}
+
+.removeBtn {
+    background-color: var(--orangeColor);
+    border-style: none;
+}
 
 
