@@ -18,16 +18,16 @@
         </div>
     </nav>
 
-    <div class="row">
-        <div class="col-md-4">
-        <div class="card">
-            <h3>Search My Watch List</h3>
+    <div class="row justify-content-center watchlistMain">
+        <div class="col-md-3">
+        <div class="card watchlistSearch">
+            <h3>Search Watch List</h3>
             <div>
                 <form id="search-form">
                   <input id="search-input" class="form w-100" type="text" placeholder="Search my watch list">
 
             </div>
-            <div>
+            <div class="filterContainer">
                 <p>Filter by:</p>
                 <select class="col dropdown mb-2 p-2" id="type-input">
                     <option value="" disabled selected>Type</option>
@@ -59,11 +59,11 @@
             </div>
             <!-- list element for search results -->
             <ul></ul>
-            </div>
         </div>
+     </div>
     
-        <div class="col-md-8">
-        <div class="card">
+        <div class="col-md-7">
+        <div class="card watchlistResults">
             <h3>My Watch List</h3>
             <div class="card">
                 <!-- Watch list example card -->
