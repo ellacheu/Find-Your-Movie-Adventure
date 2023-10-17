@@ -134,3 +134,7 @@ body {
 }
 
 
+#genre-input {
+    /* max-height: 50px; */
+    overflow-y: scroll;
+}  
