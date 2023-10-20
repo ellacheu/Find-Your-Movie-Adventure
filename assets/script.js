@@ -8,7 +8,7 @@ var submitBtn = $('.btn');
 
 submitBtn.on("click", function(event) {
     event.preventDefault();
-window.location.href ="./searchresults.html";
+window.location.href ="./assets/searchresults.html";
 getResults();
 
 
