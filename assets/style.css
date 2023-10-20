@@ -78,15 +78,34 @@ body {
     flex-wrap: wrap;
 }
 
-/* .footerText {
-    margin: 0% 40%;
-} */
-
-
 .footer p {
     color: var(--whiteColor);
     /* text-align: center; */
     font-size: 15px;
+}
+
+/* SEARCH RESULT PAGE */
+
+#resultCard {
+    background-color: var(--blackColor);
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1.5%;
+}
+
+#resultCard h4 {
+    color: var(--whiteColor);
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.resultItem {
+    background-color: var(--grayColor);
+    color: var(--whiteColor);
+    margin: 0.5%;
+    padding: 1.5%;
+    min-height: 4%;
 }
 
 /* WATCHLIST PAGE */
@@ -135,6 +154,5 @@ body {
 
 
 #genre-input {
-    /* max-height: 50px; */
     overflow-y: scroll;
 }  
