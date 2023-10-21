@@ -18,10 +18,14 @@ var genreChoice = parsedCriteria.genre;
 var typeChoice = parsedCriteria.type;
 console.log(genreChoice);
 
-if (genreChoice === "" && typeChoice === "") {
+if (genreChoice === "" && typeChoice === "Movies") {
   var genreSearch = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
-} else {
-  var genreSearch = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc' + `&with_genres=${genreChoice}`
+} else if (typeChoice === "Movies") {
+  var genreSearch = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc' + `&with_genres=${genreChoice}`;
+} else if (genreChoice == "" && typeChoice === "Shows") {
+  var genreSearch = 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_origin_country=US';
+} else if (typeChoice === "Shows") {
+  var genreSearch = 'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_origin_country=US' + `&with_genres=${genreChoice}`;
 }
 }
 fetch(genreSearch, options)
@@ -48,10 +52,15 @@ console.log(movieDetailResult.results[i]);
     // trailerBtn.appendChild(resultItem);
     
     var titleContent = data.results[i].title;
+    var tvTitleContent = data.results[i].name;
     var movieTitle = document.createElement("h5");
+    var tvTitle = document.createElement("h5");
     movieTitle.value = titleContent;
     movieTitle.textContent = titleContent;
+    tvTitle.value = tvTitleContent;
+    tvTitle.textContent = tvTitleContent;
     resultCard.appendChild(movieTitle);
+    resultCard.appendChild(tvTitle);
 
     console.log(titleContent);
 
