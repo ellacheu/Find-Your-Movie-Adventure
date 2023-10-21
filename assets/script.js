@@ -92,22 +92,3 @@ fetch('https://api.themoviedb.org/3/watch/providers/movie?language=en-US&watch_r
   .then(response => response.json())
   .then(data => console.log(data));
  
-  // function to pull search inputs
-  // save inputs in local storage
-  
-    
-
-  
- 
-
-
-// watchmode API Key: gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75
-// curl -i 'https://api.watchmode.com/v1/title/345534/details/?apiKey=YOUR_API_KEY&append_to_response=sources'
-
-// const watchApi = 'https://api.watchmode.com/v1/title/345534/details/?apiKey=gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75&append_to_response=sources';
-
-
-// fetch(watchApi)
-// .then(response => response.json())
-// .then(data => console.log(data));
-
