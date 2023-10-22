@@ -30,12 +30,13 @@ fetch(genreSearch, options)
   .then(response => response.json())
   .then((data) => {
     movieDetailResult = data
+    console.log(data);
 
 
     //Display Movie Results//
     for (i = 0; i < movieDetailResult.results.length; i++) {
       var resultCard = document.createElement("div");
-      var idContent = data.results[i].id;
+      var titleId = data.results[i].id;
       resultCard.className = "card resultItem";
       resultCard.id = `result-${i}`;
       resultEl.appendChild(resultCard);
@@ -50,6 +51,12 @@ fetch(genreSearch, options)
       tvTitle.textContent = tvTitleContent;
       resultCard.appendChild(movieTitle);
       resultCard.appendChild(tvTitle);
+
+      var idContent = document.createElement('span')
+      idContent.setAttribute("style", "display:none;")
+      idContent.value = titleId;
+      idContent.textContent = titleId;
+      resultCard.appendChild(idContent);
 
 
       var summaryContent = data.results[i].overview;
@@ -75,8 +82,11 @@ function watchListClickHandle (event) {
   var cardData = {
     title: parent.querySelector("h5").textContent,
     name: parent.querySelector("h6").textContent,
-    summary: parent.querySelector("p").textContent
+    summary: parent.querySelector("p").textContent,
+    id: parent.querySelector('span').value
   }
+
+  console.log(cardData);
 
   if (watchedMovies) {
     watchedMovies.push(cardData)
