@@ -78,9 +78,13 @@ body {
     flex-wrap: wrap;
 }
 
+.footer {
+    padding-top: 15px;
+    background-color: var(--grayColor);
+}
+
 .footer p {
     color: var(--whiteColor);
-    /* text-align: center; */
     font-size: 15px;
 }
 
@@ -114,18 +118,15 @@ body {
     margin-top: 5%;
 }
 
-.watchlistSearch {
-    margin-right: 30%;
-    background-color: var(--grayColor);
-}
-
-.watchlistSearch h3 {
-    color: var(--whiteColor);
-}
-
 .watchlistResults {
-    background-color: var(--grayColor);
+    margin: 0% 10%;
+    background-color: var(--blackColor);
+    border-style: none;
     padding: 1%;
+}
+
+.watchlistResults h3 {
+    text-align: center;
 }
 
 .watchlistResults h3,
@@ -135,7 +136,7 @@ body {
 }
 
 .watchlistResults .card {
-    background-color: var(--blackColor);
+    background-color: var(--grayColor);
     border-style: none;
     margin: 2%;
     padding: 1.5%;
@@ -152,7 +153,8 @@ body {
     border-style: none;
 }
 
-
 #genre-input {
     overflow-y: scroll;
-}  
+} 
+
+

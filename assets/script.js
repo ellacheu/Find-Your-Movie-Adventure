@@ -14,14 +14,14 @@ submitBtn.on("click", function(event) {
   const genreSelected = genreDropdown.value;
   const typeSelected = typeDropdown.value;
   const streamSelected = streamDropdown.value;
-  console.log(genreSelected);
+
 
 var savedInputs = {
   genre: genreSelected,
   type: typeSelected,
   stream: streamSelected
 }
-console.log(savedInputs);
+
 
 var savedInputsStringify = JSON.stringify(savedInputs);
 
@@ -43,18 +43,18 @@ const options = {
   fetch_result = fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
     .then(response => response.json())
     .then(data => {
-         console.log(data)
+   
 
 
 
 
 const movieSelect = document.getElementById("genre-input");
 const genreList = data.genres;
-console.log(genreList);
+
 
 for (let i = 0; i < genreList.length; i++) {
     const option = document.createElement("option");
-    console.log(genreList[i].name);
+
     option.id = `${genreList[i]}`;
     option.className = "genreOption";
     option.value = genreList[i].id;
@@ -92,22 +92,3 @@ fetch('https://api.themoviedb.org/3/watch/providers/movie?language=en-US&watch_r
   .then(response => response.json())
   .then(data => console.log(data));
  
-  // function to pull search inputs
-  // save inputs in local storage
-  
-    
-
-  
- 
-
-
-// watchmode API Key: gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75
-// curl -i 'https://api.watchmode.com/v1/title/345534/details/?apiKey=YOUR_API_KEY&append_to_response=sources'
-
-// const watchApi = 'https://api.watchmode.com/v1/title/345534/details/?apiKey=gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75&append_to_response=sources';
-
-
-// fetch(watchApi)
-// .then(response => response.json())
-// .then(data => console.log(data));
-
