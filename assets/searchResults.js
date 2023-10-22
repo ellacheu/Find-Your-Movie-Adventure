@@ -30,21 +30,17 @@ fetch(genreSearch, options)
   .then(response => response.json())
   .then((data) => {
     movieDetailResult = data
+    console.log(data);
 
 
     //Display Movie Results//
     for (i = 0; i < movieDetailResult.results.length; i++) {
       var resultCard = document.createElement("div");
-      var idContent = data.results[i].id;
+      var titleId = data.results[i].id;
       resultCard.className = "card resultItem";
       resultCard.id = `result-${i}`;
       resultEl.appendChild(resultCard);
 
-<<<<<<< HEAD
-//////////////////////    
-
-
-=======
       var titleContent = data.results[i].title;
       var tvTitleContent = data.results[i].name;
       var movieTitle = document.createElement("h5");
@@ -55,27 +51,19 @@ fetch(genreSearch, options)
       tvTitle.textContent = tvTitleContent;
       resultCard.appendChild(movieTitle);
       resultCard.appendChild(tvTitle);
->>>>>>> a8be06ddecf26daf2bfab6f7675cc91cc5589e73
+
+      var idContent = document.createElement('span')
+      idContent.setAttribute("style", "display:none;")
+      idContent.value = titleId;
+      idContent.textContent = titleId;
+      resultCard.appendChild(idContent);
 
 
-<<<<<<< HEAD
-    var titleContent = data.results[i].title;
-    var tvTitleContent = data.results[i].name;
-    var movieTitle = document.createElement("h5");
-    var tvTitle = document.createElement("h5");
-    movieTitle.value = titleContent;
-    movieTitle.textContent = titleContent;
-    tvTitle.value = tvTitleContent;
-    tvTitle.textContent = tvTitleContent;
-    resultCard.appendChild(movieTitle);
-    resultCard.appendChild(tvTitle);
-=======
       var summaryContent = data.results[i].overview;
       var summary = document.createElement('p');
       summary.value = summaryContent;
       summary.textContent = summaryContent;
       resultCard.appendChild(summary);
->>>>>>> a8be06ddecf26daf2bfab6f7675cc91cc5589e73
 
       var watchListBtn = document.createElement('button');
       resultCard.appendChild(watchListBtn);
@@ -83,50 +71,6 @@ fetch(genreSearch, options)
       watchListBtn.addEventListener('click', watchListClickHandle)
     }
 
-<<<<<<< HEAD
-    var summaryContent = data.results[i].overview;
-    var summary = document.createElement('p');
-    summary.value = summaryContent;
-    summary.textContent = summaryContent;
-    resultCard.appendChild(summary);
-
-    var trailerBtn = document.createElement('button');
-    trailerBtn.textContent = 'Watch Trailer';
-    // trailerBtn.addEventListner ('click', function(){
-    //   console.log(trailerBtn)
-    // })
-    resultCard.appendChild(trailerBtn);
-
-    var watchListBtn = document.createElement ('button');
-    watchListBtn.textContent = 'Save to Watch List';
-    watchListBtn.addEventListener ('click', function() {
-      var cardData = {
-        title: titleContent, 
-        summary: summaryContent,
-      }
-      console.log(cardData);    
-      var cardDataString = JSON.stringify(cardData);
-      localStorage.setItem("watchSave", cardDataString);
-
-    })
-    resultCard.appendChild(watchListBtn);
-    
-}
-
-});
-
-// watchmode API Key: gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75
-// curl -i 'https://api.watchmode.com/v1/title/345534/details/?apiKey=YOUR_API_KEY&append_to_response=sources'
-
-// const watchApi = 'https://api.watchmode.com/v1/title/345534/details/?apiKey=gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75&append_to_response=sources';
-
-
-// fetch(watchApi)
-// .then(response => response.json())
-// .then(data => console.log(data));
-
-
-=======
   });
 
 
@@ -138,8 +82,11 @@ function watchListClickHandle (event) {
   var cardData = {
     title: parent.querySelector("h5").textContent,
     name: parent.querySelector("h6").textContent,
-    summary: parent.querySelector("p").textContent
+    summary: parent.querySelector("p").textContent,
+    id: parent.querySelector('span').value
   }
+
+  console.log(cardData);
 
   if (watchedMovies) {
     watchedMovies.push(cardData)
@@ -151,4 +98,3 @@ function watchListClickHandle (event) {
   }
 }
 
->>>>>>> a8be06ddecf26daf2bfab6f7675cc91cc5589e73
