@@ -37,7 +37,9 @@ fetch(genreSearch, options)
 
     
 
-//////////////////////
+//////////////////////    
+
+
 
 //Display Movie Results//
 for(i = 0; i < movieDetailResult.results.length; i++){
@@ -47,10 +49,6 @@ console.log(movieDetailResult.results[i]);
     resultCard.id = `result-${i}`;
     resultEl.appendChild(resultCard);
 
-    // var trailerBtn = document.createElement('button');
-    // trailerBtn.textContent = 'Watch Trailer';
-    // trailerBtn.appendChild(resultItem);
-    
     var titleContent = data.results[i].title;
     var tvTitleContent = data.results[i].name;
     var movieTitle = document.createElement("h5");
@@ -69,8 +67,40 @@ console.log(movieDetailResult.results[i]);
     summary.value = summaryContent;
     summary.textContent = summaryContent;
     resultCard.appendChild(summary);
+
+    var trailerBtn = document.createElement('button');
+    trailerBtn.textContent = 'Watch Trailer';
+    // trailerBtn.addEventListner ('click', function(){
+    //   console.log(trailerBtn)
+    // })
+    resultCard.appendChild(trailerBtn);
+
+    var watchListBtn = document.createElement ('button');
+    watchListBtn.textContent = 'Save to Watch List';
+    watchListBtn.addEventListener ('click', function() {
+      var cardData = {
+        title: titleContent, 
+        summary: summaryContent,
+      }
+      console.log(cardData);    
+      var cardDataString = JSON.stringify(cardData);
+      localStorage.setItem("watchSave", cardDataString);
+
+    })
+    resultCard.appendChild(watchListBtn);
     
 }
 
 });
+
+// watchmode API Key: gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75
+// curl -i 'https://api.watchmode.com/v1/title/345534/details/?apiKey=YOUR_API_KEY&append_to_response=sources'
+
+// const watchApi = 'https://api.watchmode.com/v1/title/345534/details/?apiKey=gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75&append_to_response=sources';
+
+
+// fetch(watchApi)
+// .then(response => response.json())
+// .then(data => console.log(data));
+
 
