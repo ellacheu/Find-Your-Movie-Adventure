@@ -14,14 +14,14 @@ submitBtn.on("click", function(event) {
   const genreSelected = genreDropdown.value;
   const typeSelected = typeDropdown.value;
   const streamSelected = streamDropdown.value;
-  console.log(genreSelected);
+
 
 var savedInputs = {
   genre: genreSelected,
   type: typeSelected,
   stream: streamSelected
 }
-console.log(savedInputs);
+
 
 var savedInputsStringify = JSON.stringify(savedInputs);
 
@@ -43,18 +43,18 @@ const options = {
   fetch_result = fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
     .then(response => response.json())
     .then(data => {
-         console.log(data)
+   
 
 
 
 
 const movieSelect = document.getElementById("genre-input");
 const genreList = data.genres;
-console.log(genreList);
+
 
 for (let i = 0; i < genreList.length; i++) {
     const option = document.createElement("option");
-    console.log(genreList[i].name);
+
     option.id = `${genreList[i]}`;
     option.className = "genreOption";
     option.value = genreList[i].id;
