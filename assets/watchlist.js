@@ -27,10 +27,13 @@ for (let i=0; i < watchedMovies.length; i++) {
     watchSource = data;
     console.log(data)
     var watchListCard = document.createElement('div');
-    watchListCard.className = "card watchlistResults";
+    watchListCard.className = "card resultItem";
     watchListCard.innerHTML = `
+    <img class="poster" src=${watchedMovies[i].image}>
+    <div class=cardTextContainer2>
     <h5>${watchedMovies[i].title || watchedMovies[i].name}</h5>
-    <p>${watchedMovies[i].summary}</p>`;
+    <p>${watchedMovies[i].summary}</p>
+    </div>`;
   
     watchlistEl.appendChild(watchListCard);
   
