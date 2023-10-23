@@ -41,6 +41,16 @@ fetch(genreSearch, options)
       resultCard.id = `result-${i}`;
       resultEl.appendChild(resultCard);
 
+      var posterData = "https://image.tmdb.org/t/p/w500/" + data.results[i].poster_path;
+      var posterImage = document.createElement("img")
+      posterImage.src = posterData;
+      posterImage.className = "poster";
+      resultCard.appendChild(posterImage);
+
+      var titleSummaryContainer = document.createElement("div");
+      titleSummaryContainer.className = "cardTextContainer";
+      resultCard.appendChild(titleSummaryContainer)
+
       var titleContent = data.results[i].title;
       var tvTitleContent = data.results[i].name;
       var movieTitle = document.createElement("h5");
@@ -49,24 +59,24 @@ fetch(genreSearch, options)
       movieTitle.textContent = titleContent;
       tvTitle.value = tvTitleContent;
       tvTitle.textContent = tvTitleContent;
-      resultCard.appendChild(movieTitle);
-      resultCard.appendChild(tvTitle);
+      titleSummaryContainer.appendChild(movieTitle);
+      titleSummaryContainer.appendChild(tvTitle);
 
       var idContent = document.createElement('span')
       idContent.setAttribute("style", "display:none;")
       idContent.value = titleId;
       idContent.textContent = titleId;
-      resultCard.appendChild(idContent);
+      titleSummaryContainer.appendChild(idContent);
 
 
       var summaryContent = data.results[i].overview;
       var summary = document.createElement('p');
       summary.value = summaryContent;
       summary.textContent = summaryContent;
-      resultCard.appendChild(summary);
+      titleSummaryContainer.appendChild(summary);
 
       var watchListBtn = document.createElement('button');
-      resultCard.appendChild(watchListBtn);
+      titleSummaryContainer.appendChild(watchListBtn);
       watchListBtn.textContent = 'Save to Watch List';
       watchListBtn.addEventListener('click', watchListClickHandle)
     }
@@ -75,11 +85,12 @@ fetch(genreSearch, options)
 
 
 function watchListClickHandle (event) {
-  var parent = event.target.parentElement
+  var parent = event.target.parentElement.parentElement
   var watchedMovies = JSON.parse(localStorage.getItem('watchSave'))
 
   // if show & movie, assign by Id instead
   var cardData = {
+    image: parent.querySelector("img").src,
     title: parent.querySelector("h5").textContent,
     name: parent.querySelector("h6").textContent,
     summary: parent.querySelector("p").textContent,
