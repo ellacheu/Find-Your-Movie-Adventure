@@ -97,8 +97,6 @@ function watchListClickHandle (event) {
     id: parent.querySelector('span').value
   }
 
-  console.log(cardData);
-
   if (watchedMovies) {
     watchedMovies.push(cardData)
     localStorage.setItem("watchSave", JSON.stringify(watchedMovies));
