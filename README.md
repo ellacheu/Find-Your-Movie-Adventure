@@ -7,5 +7,10 @@ A website that allows the user to pick between Movies or TV Shows in addition to
 ## Code Source
 [Github](https://github.com/ellacheu/Find-Your-Movie-Adventure)
 
+## Resources and Technologies
+[TMDB API](https://developer.themoviedb.org/docs)
+[WatchMode API](https://api.watchmode.com/docs)
+[MDN Docs](https://developer.mozilla.org/en-US/)
+
 ## Final Product
 ![final](./images/landingPage.png)![final](./images/resultPage.png)![final](./images/watchlistPage.png)
