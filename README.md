@@ -4,5 +4,8 @@ A website that allows the user to pick between Movies or TV Shows in addition to
 ## Website Link
 [Find Your Movie Adventure](https://ellacheu.github.io/Find-Your-Movie-Adventure/)
 
+## Code Source
+[Github](https://github.com/ellacheu/Find-Your-Movie-Adventure)
+
 ## Final Product
 ![final](./images/landingPage.png)![final](./images/resultPage.png)![final](./images/watchlistPage.png)
