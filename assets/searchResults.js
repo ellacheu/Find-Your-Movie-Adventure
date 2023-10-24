@@ -51,6 +51,10 @@ fetch(genreSearch, options)
       titleSummaryContainer.className = "cardTextContainer";
       resultCard.appendChild(titleSummaryContainer)
 
+  
+     
+
+
       var titleContent = data.results[i].title;
       var tvTitleContent = data.results[i].name;
       var movieTitle = document.createElement("h5");
@@ -74,6 +78,35 @@ fetch(genreSearch, options)
       summary.value = summaryContent;
       summary.textContent = summaryContent;
       titleSummaryContainer.appendChild(summary);
+
+      titleSummaryContainer
+
+      ///// RATING SYSTEM IMPLEMENTATION //////
+      var ratings_wrapper = document.createElement("div");
+      var ratings = document.createElement("div")
+
+      var one_star = document.createElement("span")
+      one_star.textContent = '&#9733;'
+
+      var two_star = document.createElement("span")
+      two_star.textContent = '&#9733;'
+
+      var three_star = document.createElement("span")
+      three_star.textContent = '&#9733;'
+
+      var four_star = document.createElement("span")
+      four_star.textContent = '&#9733;'
+
+      var five_star = document.createElement("span")
+      five_star.textContent = '&#9733;'
+
+      ratings.append(one_star, two_star, three_star, four_star, five_star)
+
+      
+
+      titleSummaryContainer.append(ratings_wrapper, ratings)
+
+
 
       var watchListBtn = document.createElement('button');
       titleSummaryContainer.appendChild(watchListBtn);
@@ -109,3 +142,22 @@ function watchListClickHandle (event) {
   }
 }
 
+
+///// Rating System //////
+
+ratings = {
+  "1": "⭐",
+  "2": "⭐⭐",
+  "3": "⭐⭐⭐",
+  "4": "⭐⭐⭐⭐",
+  "5": "⭐⭐⭐⭐⭐",
+  "6": "⭐⭐⭐⭐⭐⭐",
+  "7": "⭐⭐⭐⭐⭐⭐⭐",
+  "8": "⭐⭐⭐⭐⭐⭐⭐⭐",
+  "9": "⭐⭐⭐⭐⭐⭐⭐⭐⭐",
+  "10": "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐",
+};
+
+function rating_prompt(){
+
+}
