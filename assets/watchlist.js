@@ -3,20 +3,18 @@ var watchedMovies = JSON.parse(localStorage.getItem('watchSave'));
 var modal = document.getElementById("errorModal");
 // var close = document.querySelector(".close");
 console.log(watchedMovies)
-// watchmode API Key: gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75
-
-//watchmode API 2: jJzKRNygZlziCV5DW4foPZDO7A0FExdqV2CAW0AN
+//watchmode API 3: VT6zUuxqPms7VHQFixS8tbs2T56o7c2r5kfENQrx
+//watchmode API 4: 9K8HfK17GBx7i7DxDAIUs1E06dXTYdzVrzOomkLJ
 
 
 for (let i=0; i < watchedMovies.length; i++) {
   console.log(watchedMovies[i].name)
-  if (watchedMovies[i].hasOwnProperty("title")) {
-    var watchApi = 'https://api.watchmode.com/v1/title/' + `movie-${watchedMovies[i].id}` + '/sources/?apiKey=jJzKRNygZlziCV5DW4foPZDO7A0FExdqV2CAW0AN&append_to_response=sources';
+  console.log(watchedMovies[i].title.length)
+  if (watchedMovies[i].title.length > 0) {
+    var watchApi = 'https://api.watchmode.com/v1/title/' + `movie-${watchedMovies[i].id}` + '/sources/?apiKey=VT6zUuxqPms7VHQFixS8tbs2T56o7c2r5kfENQrx&append_to_response=sources';
   
-  } else if (watchedMovies[i].hasOwnProperty("name")) {
-    var watchApi = 'https://api.watchmode.com/v1/title/' + `tv-${watchedMovies[i].id}` + '/sources/?apiKey=jJzKRNygZlziCV5DW4foPZDO7A0FExdqV2CAW0AN&append_to_response=sources';
   } else {
-
+    var watchApi = 'https://api.watchmode.com/v1/title/' + `tv-${watchedMovies[i].id}` + '/sources/?apiKey=VT6zUuxqPms7VHQFixS8tbs2T56o7c2r5kfENQrx&append_to_response=sources';
   }
   // const watchApi = 'https://api.watchmode.com/v1/title/345534/sources/?apiKey=gUIUJapK8L1BerWWTsAOTkVgJtk5gNssyjxG7e75&append_to_response=sources';
 
@@ -27,7 +25,7 @@ for (let i=0; i < watchedMovies.length; i++) {
     watchSource = data;
     console.log(data)
     var watchListCard = document.createElement('div');
-    watchListCard.className = "card resultItem";
+    watchListCard.className = "card resultItem2";
     watchListCard.innerHTML = `
     <img class="poster" src=${watchedMovies[i].image}>
     <div class=cardTextContainer2>
